@@ -9,15 +9,15 @@ Level thisLevel;
 Player character;
 
 void setup() {
-  size(600, 450);  // 4:3 ratio
+  size(960, 720);  // 4:3 ratio
   thisLevel = new Level("levels/0.txt", "level_background.png");
-  character = new Player();
+  character = new Player(width/2,750,25,5,10);
 }
 
 void draw() {
   thisLevel.display();
   character.display();
-  
+  character.move();
   
 
 

@@ -1,15 +1,17 @@
 class Player {
   //data
-  int x, y, size, dx, dy;
+  float x, y, size, dx, dy;
   boolean moveUp, moveLeft, moveRight;
   //constructor
-  Player() {
-    x = width/2;
-    y = height/2;
-    size = 25;
-    moveUp=false;
-    moveLeft=false;
-    moveRight=false;
+  Player(float _x, float _y,float _size, float _dx, float _dy) {
+    x = _x ;//   width/2;
+    y = _y;//750;
+    size = _size;//25;
+    moveUp = false;
+    moveLeft = false;
+    moveRight = false;
+    dx = _dx;//5;
+    dy = _dy;//10;
   }
   //behaviour
   void display() {
@@ -18,46 +20,52 @@ class Player {
     rect(x, y, size, size);
   }
   void move() {
-    if (moveUp) {
-      if (y >= 0 +45) {
-        y-= dy;
+    if (moveUp == true) {
+      if (y > 200) {
+        y -= 5;
+        if (y == 200) {
+          moveUp = false;
+        }
       }
-    }
-    if (moveLeft) {
-      if (y<=height-45) {
-        y -= dx;
+    } else if (moveUp == false) {
+      if (y == 650) {
+        y = y + 0;
+      } else {
+        y = y + 5;
       }
     }
     if (moveRight) {
-      if (y >= 0+45) {
-        y += dx;
+      x += 5;
+    } else if (x == 0) {
+      x = x + 0;
+    }
+    if (moveLeft) {
+      x -= 5;
+    } else {
+      if (x <= 0) {
+        x = 0;
+      }
+      if (x >= 920) {
+        x = 920;
       }
     }
   }
   void handleKeyPressed() {
     if (key == 'w') {
-
       moveUp = true;
-    }
-    if (key == 's' ) {
-      if (y<=height) {
-        moveLeft =true;
-      }
-    }
-    if (key == 'a' ) {
+    } else if (key == 'a') {
+      moveLeft = true;
+    } else if (key == 'd') {
       moveRight = true;
     }
   }
-
-void handleKeyReleased() {
-  if (key == 'w') {
-    moveUp = false;
+  void handleKeyReleased() {
+    if (key == 'w') {
+      moveUp = false;
+    } else if (key == 'a') {
+      moveLeft = false;
+    } else if (key == 'd') {
+      moveRight = false ;
+    }
   }
-  if (key == 'a' ) {
-    moveLeft =false;
-  }
-  if (key == 'd' ) {
-    moveRight = false;
-  }
-}
 }
