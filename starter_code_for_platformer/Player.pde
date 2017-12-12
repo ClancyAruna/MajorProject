@@ -1,35 +1,36 @@
-class Player{
+class Player {
   //data
-  int x,y,size;
+  int x, y, size, dx, dy;
   boolean moveUp, moveLeft, moveRight;
   //constructor
-  Player(){
-  x = width/2;
-  y = height/2;
-  size = 75;
-  
+  Player() {
+    x = width/2;
+    y = height/2;
+    size = 25;
+    moveUp=false;
+    moveLeft=false;
+    moveRight=false;
   }
   //behaviour
- 
+  void display() {
+    fill(0, 255, 0);
+    noStroke();
+    rect(x, y, size, size);
+  }
   void move() {
     if (moveUp) {
       if (y >= 0 +45) {
-        y-= dyL;
+        y-= dy;
       }
     }
-    if (moveDown) {
+    if (moveLeft) {
       if (y<=height-45) {
-        y += dyL;
+        y -= dx;
       }
     }
-    if (moveUp2) {
+    if (moveRight) {
       if (y >= 0+45) {
-        y -= dyR;
-      }
-    }
-    if (moveDown2) {
-      if (y<=height-45) {
-        y +=dyR;
+        y += dx;
       }
     }
   }
@@ -40,52 +41,23 @@ class Player{
     }
     if (key == 's' ) {
       if (y<=height) {
-        moveDown =true;
+        moveLeft =true;
       }
     }
     if (key == 'a' ) {
-      moveUp = true;
-    }
-    if (key == 'd' ) {
-      moveDown =true;
-    }
-    if (keyCode == UP ) {
-      moveUp2 = true;
-    }
-    if (keyCode == DOWN ) {
-      moveDown2 =true;
-    }
-    if (keyCode == LEFT ) {
-      moveDown2 =true;
-    }
-    if (keyCode == RIGHT ) {
-      moveUp2 = true;
+      moveRight = true;
     }
   }
-  void handleKeyReleased() {
-    if (key == 'w') {
-      moveUp = false;
-    }
-    if (key == 's' ) {
-      moveDown =false;
-    }
-    if (key == 'a' ) {
-      moveUp = false;
-    }
-    if (key == 'd' ) {
-      moveDown =false;
-    }
-    if (keyCode == UP ) {
-      moveUp2 = false;
-    }
-    if (keyCode == DOWN ) {
-      moveDown2 =false;
-    }
-    if (keyCode == LEFT ) {
-      moveDown2 =false;
-    }
-    if (keyCode == RIGHT ) {
-      moveUp2 = false;
-    }
+
+void handleKeyReleased() {
+  if (key == 'w') {
+    moveUp = false;
   }
+  if (key == 'a' ) {
+    moveLeft =false;
+  }
+  if (key == 'd' ) {
+    moveRight = false;
+  }
+}
 }
