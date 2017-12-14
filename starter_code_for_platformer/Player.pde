@@ -1,13 +1,13 @@
 class Player {
   //data
   float x, y, size, dx, dy;
-  boolean moveUp, moveLeft, moveRight;
+  boolean jump, moveLeft, moveRight;
   //constructor
   Player(float _x, float _y, float _size, float _dx, float _dy) {
     x = _x ;
     y = _y;
     size = _size;
-    moveUp = false;
+    jump = false;
     moveLeft = false;
     moveRight = false;
     dx = _dx;
@@ -20,25 +20,25 @@ class Player {
     rect(x, y, size, size);
   }
   void move() {
-    if (moveUp) {
-      if (y >= 0 +45) {
+    if (jump) {
+      if (y >= 0 +25) {
         y= (y- dy);
       }
     }
     if (moveLeft) {
-      if (x<=width-45) {
+      if (x<=width-25) {
         x -= dx;
       }
     }
     if (moveRight) {
-      if (x >= 0+45) {
+      if (x >= 0+25) {
         x += dx;
       }
     }
   }
   void handleKeyPressed() {
-    if (key == 'w') {
-      moveUp = true;
+    if (key == ' ') {
+      jump = true;
     }
     if (key == 'a' ) {
       moveLeft = true;
@@ -48,8 +48,8 @@ class Player {
     }
   }
   void handleKeyReleased() {
-    if (key == 'w') {
-      moveUp = false;
+    if (key == ' ') {
+      jump = false;
     }
     if (key == 'a' ) {
       moveLeft = false;
@@ -59,3 +59,7 @@ class Player {
     }
   }
 }
+
+
+
+//class for surface jumping. ask for demo?
