@@ -19,19 +19,20 @@ class Projectile {
   //behaviour(s)
   void display() {
     fill(255);
-    ellipse(location.x, location.y, 10, 10);
+    ellipse(x, y, 10, 10);
+    move();
   }
 
   void move() {
-    if (wasShot == true) {
       x += dx;
-    }
     //y += dy;
   }
 
   void rKeyPressed() {
-    if (key == '1' && wasShot == false) {
+    if (key == '1') {
       wasShot = true;
+      move();
+      
     }
   }
 }

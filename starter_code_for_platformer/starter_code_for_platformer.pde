@@ -4,6 +4,7 @@
 //  - loading platformer level data
 //  - tiles are from http://open.commonly.cc
 
+//ArrayList<Projectile> bullet = new ArrayList<Projectile>();
 Projectile bullet;
 Level thisLevel;
 Player character;
@@ -19,8 +20,10 @@ void setup() {
 void draw() {
   thisLevel.display();
   character.move();
-  bullet.display();
-  bullet.move();
+  if (bullet.wasShot == true){
+    bullet.display();
+    bullet.move();
+  }
   
   character.display();
 
