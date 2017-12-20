@@ -17,6 +17,7 @@ class Player {
   void display() {
     fill(0, 255, 0);
     noStroke();
+    rectMode(CENTER);
     rect(x, y, size, size);
   }
   void move() {
@@ -26,12 +27,12 @@ class Player {
       }
     }
     if (moveLeft) {
-      if (x<=width-25) {
+      if (x>=0+25) {
         x -= dx;
       }
     }
     if (moveRight) {
-      if (x >= 0+25) {
+      if (x <= width-25) {
         x += dx;
       }
     }
