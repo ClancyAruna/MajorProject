@@ -14,7 +14,7 @@ class Tile {
     if (tileType == '#') {
       theTile = loadImage("platform.png");
     } else if (tileType == 'C') {
-      theTile = loadImage("coin.png"); // modify this to allow for character interaction
+      theTile = loadImage("coin.png");
     } else if (tileType == 'B') {
       theTile = loadImage("boxItem.png");
     } else if (tileType == 'F') {

@@ -29,7 +29,7 @@ class Projectile {
   }
 
   void move() {
-      bullet.x += dx;
+      //bullet.x += dx;
       //y += dy;
   }
 
