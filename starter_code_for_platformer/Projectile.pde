@@ -1,44 +1,3 @@
-//class Projectile {
-//  //data
-//  //PVector location, velocity;
-//  float x, y, dx, dy, radius;
-//  boolean wasShot;
-
-//  //constructor(s)
-//  Projectile() {
-//    //location = new PVector(character.x, character.y);
-//    //velocity = new PVector(-0, 0);
-//    //this.x = x;
-//    //this.y = y;
-//    //this.dx = dx;
-//    //this.dy = dy;
-//    //this.radius = radius;
-//    wasShot = false;
-//    this.x = character.x;
-//    this.y = character.y;
-//    this.dx = 10;
-//    this.radius = 5;
-//  }
-
-//  //behaviour(s)
-//  void display() {
-//    fill(255);
-//    ellipse(character.x, y, 10, 10);
-//    y += dx;
-//    //move();
-//  }
-
-// // void move() {
-//  //}
-
-//  //void rKeyPressed() {
-//  //  if (key == '1') {
-//  //    wasShot = true;
-//  //    //move();
-//  //  }
-//  //}
-//}
-
 class Projectile {
   //data
   boolean onScreen;
@@ -59,17 +18,11 @@ class Projectile {
     x += dx;
     //y += dy;
 
-<<<<<<< HEAD
     //bounceIfRequired();
 
     //display ball
     fill(0);
     ellipse(x,y, size, size);
-=======
-  void move() {
-      //bullet.x += dx;
-      //y += dy;
->>>>>>> 3201b30f0bb3c1da0ab4db6d3aa7c151bb35154f
   }
 
   void bounceIfRequired() {
