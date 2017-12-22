@@ -59,11 +59,17 @@ class Projectile {
     x += dx;
     //y += dy;
 
+<<<<<<< HEAD
     //bounceIfRequired();
 
     //display ball
     fill(0);
     ellipse(x,y, size, size);
+=======
+  void move() {
+      //bullet.x += dx;
+      //y += dy;
+>>>>>>> 3201b30f0bb3c1da0ab4db6d3aa7c151bb35154f
   }
 
   void bounceIfRequired() {
