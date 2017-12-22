@@ -1,43 +1,90 @@
+//class Projectile {
+//  //data
+//  //PVector location, velocity;
+//  float x, y, dx, dy, radius;
+//  boolean wasShot;
+
+//  //constructor(s)
+//  Projectile() {
+//    //location = new PVector(character.x, character.y);
+//    //velocity = new PVector(-0, 0);
+//    //this.x = x;
+//    //this.y = y;
+//    //this.dx = dx;
+//    //this.dy = dy;
+//    //this.radius = radius;
+//    wasShot = false;
+//    this.x = character.x;
+//    this.y = character.y;
+//    this.dx = 10;
+//    this.radius = 5;
+//  }
+
+//  //behaviour(s)
+//  void display() {
+//    fill(255);
+//    ellipse(character.x, y, 10, 10);
+//    y += dx;
+//    //move();
+//  }
+
+// // void move() {
+//  //}
+
+//  //void rKeyPressed() {
+//  //  if (key == '1') {
+//  //    wasShot = true;
+//  //    //move();
+//  //  }
+//  //}
+//}
+
 class Projectile {
   //data
-  PVector location, velocity;
-  float x, y, dx, dy, radius;
-  boolean wasShot;
+  boolean onScreen;
+  float x, y, size, dx, dy;
 
-  //constructor(s)
+  //constructor
   Projectile() {
-    //location = new PVector(character.x, character.y);
-    //velocity = new PVector(-0, 0);
-    //this.x = x;
-    //this.y = y;
-    //this.dx = dx;
-    //this.dy = dy;
-    //this.radius = radius;
-    wasShot = false;
-    this.x = character.x;
-    this.y = character.y;
-    this.dx = 10;
-    this.radius = 5;
+    x = character.x;
+    y = character.y;
+    size = 10;
+    dx = 20;//random(-20, 20);
+    dy = 20;// random(-20, 20);
   }
 
-  //behaviour(s)
-  void display() {
-    fill(255);
-    //float x = character.x;
-    ellipse(character.x, character.y, 10, 10);
-    //move();
+  //behaviour
+  void bounceBall() {
+    //move ball
+    x += dx;
+    //y += dy;
+
+    //bounceIfRequired();
+
+    //display ball
+    fill(0);
+    ellipse(x,y, size, size);
   }
 
-  void move() {
-      bullet.x += dx;
-      //y += dy;
-  }
+  void bounceIfRequired() {
+    //is it hitting the right or left side?
+    if ( (x > width - size/2) || (x < 0 + size/2) ) {
+      dx *= -1;
+    }
 
-  void rKeyPressed() {
-    if (key == '1') {
-      wasShot = true;
-      //move();
-      
+    //is it hitting the top or bottom?
+    if ( (y > height - size/2) || (y < 0 + size/2) ) {
+      dy *= -1;
+    }
+  }
+  
+  boolean isClicked(float _x, float _y) {
+    float distanceFromCenter = dist(x, y, _x, _y);
+    if (distanceFromCenter < size/2) {
+      return true;
+    }
+    else {
+      return false;
     }
   }
 }
