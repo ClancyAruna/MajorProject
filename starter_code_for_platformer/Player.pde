@@ -30,7 +30,7 @@ class Player {
         dy = 0;
       }
       else{
-        dy += gravity;
+        dy += gravity;}
     }
     if (moveLeft) {
       if (x>=0+25) {
