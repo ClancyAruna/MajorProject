@@ -3,16 +3,18 @@ class Enemy {
   // data
   float x, y, size, px, py;
   boolean moveLeft, moveRight;
+  float ground;
 
   // constructor
-  Enemy(float _x, float _y, float _size, float _px, float _py) {
-    x = _x;
-    y = _y;
-    px = _px;
-    py = _py;
-    size = _size;
+  Enemy() {
+    x = width/3;
+    y = character.ground;
+    px = 5;
+    //py = _py;
+    size = 25;
     moveLeft = false;
-    moveRight = true;
+    moveRight = false;
+    
   }
 
   //behaiviors
@@ -24,6 +26,10 @@ class Enemy {
   }
 
   void move() {
+    if (moveLeft == true) {
+      
+       
+    }
     
     
   }

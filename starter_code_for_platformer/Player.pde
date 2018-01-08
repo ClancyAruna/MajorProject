@@ -29,14 +29,7 @@ class Player {
       }
       else{
         dy += gravity;}
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
-=======
->>>>>>> f9ce8f652cace717586ea7ed046fcdf8438b306d
-    }
->>>>>>> f9ce8f652cace717586ea7ed046fcdf8438b306d
+
     if (moveLeft) {
       if (x>=0+25) {
         x -= dx;
