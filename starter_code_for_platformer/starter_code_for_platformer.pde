@@ -7,6 +7,7 @@
 
 Level thisLevel;
 Player character;
+Enemy badGuy;
 ArrayList<Projectile> bullet = new ArrayList<Projectile>();
 
 
@@ -14,12 +15,15 @@ void setup() {
   size(800, 600);  // 4:3 ratio
   thisLevel = new Level("levels/0.txt", "level_background.png");
   character = new Player();
+  badGuy = new Enemy();
 }
 
 void draw() {
   thisLevel.display();
   character.move();
   character.display();
+  badGuy.move();
+  badGuy.display();
     
     for (Projectile thisBullet : bullet) {
       thisBullet.bounceBall(); 
