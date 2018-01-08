@@ -2,16 +2,19 @@ class Player {
   //data
   float x, y, size, dx, dy;
   boolean jump, moveLeft, moveRight;
+  float ground, gravity;
   //constructor
-  Player(float _x, float _y, float _size, float _dx, float _dy) {
+  Player(float _x, float _size, float _dx, float _dy) {
     x = _x ;
-    y = _y;
+    y = ground;
     size = _size;
     jump = false;
     moveLeft = false;
     moveRight = false;
     dx = _dx;
     dy = _dy;
+    ground = height - 100;
+    gravity = 0.5;
   }
   //behaviour
   void display() {
