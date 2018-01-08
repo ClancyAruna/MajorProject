@@ -26,17 +26,11 @@ class Player {
       if (y >ground) {
         y= ground;
         dy = 0;
+        println("here");
       }
       else{
-        dy += gravity;}
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
-=======
->>>>>>> f9ce8f652cace717586ea7ed046fcdf8438b306d
-    }
->>>>>>> f9ce8f652cace717586ea7ed046fcdf8438b306d
+        dy += gravity;
+      println("over");}
     if (moveLeft) {
       if (x>=0+25) {
         x -= dx;
@@ -54,7 +48,6 @@ class Player {
   void handleKeyPressed() {
     if (key == ' ') {
       jump();
-      jump = true;
     }
     if (key == 'a' ) {
       moveLeft = true;
