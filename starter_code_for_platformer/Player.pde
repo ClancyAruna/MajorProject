@@ -4,17 +4,16 @@ class Player {
   boolean jump, moveLeft, moveRight;
   float ground, gravity;
   //constructor
-  Player(float _x, float _size, float _dx, float _dy) {
+  Player() {
     ground = height - 50;
-    gravity = 0.5;
-    x = _x ;
+    x = width/2 ;
     y = ground;
-    size = _size;
+    size = 25;
     jump = false;
     moveLeft = false;
     moveRight = false;
-    dx = _dx;
-    dy = _dy;
+    dx = 5;
+    gravity = 0.5;
   }
   //behaviour
   void display() {
@@ -24,14 +23,17 @@ class Player {
     rect(x, y, size, size);
   }
   void move() {
-    if (jump) {
       if (y >ground) {
         y= ground;
         dy = 0;
       }
       else{
-        dy += gravity;
+        dy += gravity;}
+<<<<<<< HEAD
+    
+=======
     }
+>>>>>>> f9ce8f652cace717586ea7ed046fcdf8438b306d
     if (moveLeft) {
       if (x>=0+25) {
         x -= dx;
@@ -43,8 +45,12 @@ class Player {
       }
     }
   }
+  void jump(){
+   dy = -10; 
+  }
   void handleKeyPressed() {
     if (key == ' ') {
+      jump();
       jump = true;
     }
     if (key == 'a' ) {
@@ -66,7 +72,3 @@ class Player {
     }
   }
 }
-
-
-
-//class for surface jumping. ask for demo?

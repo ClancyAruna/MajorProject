@@ -14,11 +14,10 @@ class Projectile {
 
   //behaviour
   void bounceBall() {
-    //move ball
     x += dx;
-    //y += dy;
 
-    //bounceIfRequired();
+
+    
 
     //display ball
     fill(0);
