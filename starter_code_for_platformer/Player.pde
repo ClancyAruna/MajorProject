@@ -5,6 +5,8 @@ class Player {
   float ground, gravity;
   //constructor
   Player(float _x, float _size, float _dx, float _dy) {
+    ground = height - 50;
+    gravity = 0.5;
     x = _x ;
     y = ground;
     size = _size;
@@ -13,8 +15,6 @@ class Player {
     moveRight = false;
     dx = _dx;
     dy = _dy;
-    ground = height - 100;
-    gravity = 0.5;
   }
   //behaviour
   void display() {
@@ -25,9 +25,12 @@ class Player {
   }
   void move() {
     if (jump) {
-      if (y >= 0 +25) {
-        y= (y- dy);
+      if (y >ground) {
+        y= ground;
+        dy = 0;
       }
+      else{
+        dy += gravity;
     }
     if (moveLeft) {
       if (x>=0+25) {

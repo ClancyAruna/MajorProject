@@ -13,9 +13,9 @@ ArrayList<Projectile> bullet = new ArrayList<Projectile>();
 //boolean wasShot;
 
 void setup() {
-  size(600, 450);  // 4:3 ratio
+  size(800, 600);  // 4:3 ratio
   thisLevel = new Level("levels/0.txt", "level_background.png");
-  character = new Player(width/2, height/2, 25, 5, 10);
+  character = new Player(width/2, 25, 5, 10);
   //bullet = new Projectile();
   //for (int i=0; i<5; i++) {
   //  bullet.add( new Projectile() );
