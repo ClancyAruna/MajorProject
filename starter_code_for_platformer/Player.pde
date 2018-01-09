@@ -25,7 +25,7 @@ class Player {
   }
   //moving character
   void move() {
-    if (key == ' '){
+    if (jump){
      y-=dy; 
     }
       if (y > ground) {
