@@ -14,7 +14,6 @@ class Enemy {
     size = 25;
     moveLeft = false;
     moveRight = false;
-    
   }
 
   //behaiviors
@@ -25,12 +24,33 @@ class Enemy {
     rect(x, y, size, size);
   }
 
+  //while the enemy is not touching the player, it should move either left or right, depending on is x cordinate, to the player's.
   void move() {
+    rightMovement();
+    leftMovement();
+    
     if (moveLeft == true) {
-      
-       
+      x += px;
     }
-    
-    
+    if (moveRight == true) {
+      x -= px;
+    }
+  }
+
+
+  void rightMovement() {
+    if (x < character.x) {
+      moveLeft = true;
+    } else {
+      moveLeft = false;
+    }
+  }
+
+  void leftMovement() {
+    if (x > character.x) {
+      moveRight = true;
+    } else {
+      moveRight = false;
+    }
   }
 }
