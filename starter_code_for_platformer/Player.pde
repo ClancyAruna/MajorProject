@@ -29,13 +29,9 @@ class Player {
         println("here");
       }
       else{
-<<<<<<< HEAD
         dy += gravity;
       println("over");}
-=======
-        dy += gravity;}
 
->>>>>>> 0876809e5edf304fcef9a1e7cf6c3c9a3c945704
     if (moveLeft) {
       if (x>=0+25) {
         x -= dx;
