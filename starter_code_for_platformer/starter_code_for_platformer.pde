@@ -36,7 +36,7 @@ void keyPressed() {
     //wasShot = true;
     bullet.add( new Projectile() );
   }
-  character.jump();
+
 }
 
 void keyReleased() {

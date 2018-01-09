@@ -5,7 +5,7 @@ class Player {
   float ground, gravity;
   //constructor
   Player() {
-    ground = height - 50;
+    ground = height - 65;
     x = width/2 ;
     y = ground;
     size = 25;
@@ -16,21 +16,27 @@ class Player {
     gravity = 0.5;
   }
   //behaviour
+  //creating square player
   void display() {
     fill(0, 255, 0);
     noStroke();
     rectMode(CENTER);
     rect(x, y, size, size);
   }
+  //moving character
   void move() {
-      if (y >ground) {
-        y= ground;
+    if (key == ' '){
+     y-=dy; 
+    }
+      if (y > ground) {
+        y = ground;
         dy = 0;
         println("here");
-      }
-      else{
+      } else {
         dy += gravity;
-      println("over");}
+        println("over");
+      }
+    
 
     if (moveLeft) {
       if (x>=0+25) {
@@ -43,12 +49,11 @@ class Player {
       }
     }
   }
-  void jump(){
-   dy = -10; 
-  }
+
+  //goes to key pressed function in main tab
   void handleKeyPressed() {
     if (key == ' ') {
-      jump();
+      jump = true;
     }
     if (key == 'a' ) {
       moveLeft = true;
