@@ -13,7 +13,7 @@ class Player {
     moveLeft = false;
     moveRight = false;
     dx = 5;
-    gravity = 0.5;
+    gravity = 1;
   }
   //behaviour
   //creating square player
@@ -25,18 +25,18 @@ class Player {
   }
   //moving character
   void move() {
-    if (jump){
-     y-=dy; 
+    y += dy;
+    if (jump) {
+      dy = -10;
     }
-      if (y > ground) {
-        y = ground;
-        dy = 0;
-        println("here");
-      } else {
-        dy += gravity;
-        println("over");
-      }
     
+    if (y > ground) {
+      y = ground;
+      dy = 0;
+    } else {
+      dy += gravity;
+    }
+
 
     if (moveLeft) {
       if (x>=0+25) {

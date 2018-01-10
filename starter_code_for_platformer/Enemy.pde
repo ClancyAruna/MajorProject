@@ -9,7 +9,7 @@ class Enemy {
   Enemy() {
     x = width/3;
     y = character.ground;
-    px = 5;
+    px = 2.5;
     //py = _py;
     size = 25;
     moveLeft = false;
