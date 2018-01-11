@@ -6,7 +6,7 @@ class Player {
   //constructor
   Player() {
     ground = height - 65;
-    x = width/2 ;
+    x = width/102 ;
     y = ground;
     size = 25;
     jump = false;
