@@ -27,6 +27,7 @@ void draw() {
   badGuy.move();
   badGuy.display();
   playerHP.display();
+  playerHP.move();
     
     for (Projectile thisBullet : bullet) {
       thisBullet.bounceBall(); 
