@@ -33,7 +33,20 @@ class Player {
     if (y > ground) {
       y = ground;
       dy = 0;
-    } else {
+    }else if(y > 410 && y<420 && x>37 && x<152){
+      y = 409;
+      dy = 0;
+    }else if(y > 326 && y<336 && x>228 && x<341){
+      y = 325;
+      dy = 0;
+    }else if(y > 242 && y<252 && x>417 && x<532){
+      y = 241;
+      dy = 0;
+    }else if(y > 367 && y < 377 && x > 607 && x < 721){
+      y = 366;
+      dy = 0;
+    }
+    else {
       dy += gravity;
     }
 
