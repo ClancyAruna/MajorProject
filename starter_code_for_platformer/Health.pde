@@ -1,6 +1,7 @@
 class Health {
   //data
   float hp, maxHP;
+  boolean moveLeft, moveRight;
   float x, y, hx, hy;
   //constructor
   Health(float _hp, float _maxHP) {
@@ -10,6 +11,8 @@ class Health {
     y = 10;
     hx = badGuy.x;
     hy = badGuy.y;
+    moveLeft = false;
+    moveRight = false;
     
   }
   
