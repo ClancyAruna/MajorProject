@@ -22,6 +22,7 @@ class Enemy {
     noStroke();
     rectMode(CENTER);
     rect(x, y, size, size);
+    
   }
 
   //while the enemy is not touching the player, it should move either left or right, depending on is x cordinate, to the player's.

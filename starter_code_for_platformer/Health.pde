@@ -1,22 +1,32 @@
 class Health {
   //data
-  int hp, maxHP;
+  float hp, maxHP;
   float x, y, hx, hy;
   //constructor
-  Health(int _hp, int _maxHP) {
+  Health(float _hp, float _maxHP) {
     hp = _hp;
     maxHP = _maxHP;
-    x = hp;
+    x = 10;
     y = 10;
-    hx = 20;
-    hx = 20;
+    hx = badGuy.x;
+    hy = badGuy.y;
+    
   }
   
   //behaiviors
   void display() {
-    rect();
-    
+    fill(0);
+    rectMode(CORNER);
+    //back health bar
+    rect(hx, hy - 25, maxHP, 10);
+    // actual health bar
+    fill(0,255,0);
+    rect(hx, hy - 25, hp, 10);   
   }
+  
+  void move() {
+    
+      }
     
   
 }
