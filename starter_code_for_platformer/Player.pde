@@ -15,11 +15,13 @@ class Player {
     dx = 5;
     gravity = 1;
     stand = loadImage("0.png");
+
   }
   //behaviour
   //creating square player
   void display() {
     image(stand, x, y);
+
   }
   //moving character
   void move() {
