@@ -7,43 +7,45 @@ class Player {
   //constructor
   Player() {
     ground = height - 65;
-    x = width/102 ;
+    x = 80 ;
     y = ground;
     jump = false;
     moveLeft = false;
     moveRight = false;
-    dx = 5;
-    gravity = 1;
+    dx = 10;
+    gravity = 2;
     stand = loadImage("0.png");
 
   }
   //behaviour
-  //creating square player
+  //creating player
   void display() {
+    imageMode(CENTER);
     image(stand, x, y);
+    imageMode(CORNER);
 
   }
   //moving character
   void move() {
     y += dy;
     if (jump) {
-      dy = -10;
+      dy = -20;
     }
     
-    if (y > ground-60) {
-      y = ground-60;
+    if (y > ground-26) {
+      y = ground-26;
       dy = 0;
-    }else if(y > 410-60 && y<420-60 && x>37 && x<152){
-      y = 409-60;
+    }else if(y > 409-30 && y<430-26 && x>37 && x<152){
+      y = 409-26;
       dy = 0;
-    }else if(y > 326-60 && y<336-60 && x>228 && x<341){
-      y = 325-60;
+    }else if(y > 325-26 && y<346-26 && x>228 && x<341){
+      y = 325-26;
       dy = 0;
-    }else if(y > 242-60 && y<252-60 && x>417 && x<532){
-      y = 241-60;
+    }else if(y > 241-26 && y<262-26 && x>417 && x<532){
+      y = 241-26;
       dy = 0;
-    }else if(y > 367-60 && y < 377-60 && x > 607 && x < 721){
-      y = 366-60;
+    }else if(y > 366-26 && y < 387-26 && x > 607 && x < 721){
+      y = 366-26;
       dy = 0;
     }
     else {
